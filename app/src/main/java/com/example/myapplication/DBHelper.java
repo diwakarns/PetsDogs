@@ -16,12 +16,35 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table UserDetails(name TEXT primary key, contact TEXT, dob TEXT)");
+        DB.execSQL("create Table Feeds(feedsID TEXT primary key AutoIncrement, served_by TEXT," +
+                "updated_by TEXT, created_date DATETIME,update_date DATETIME)");
+
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
         DB.execSQL("drop Table if exists UserDetails");
+        DB.execSQL("drop Table if exists Feeds");
+
+    }
+    public Boolean insertfeeddata(String nameTXT, String served_by, String updated_by, String created_date, String update_date){
+        SQLiteDatabase DB = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("served_by", served_by);
+        contentValues.put("updated_by", updated_by);
+        contentValues.put("created_date", created_date);
+        contentValues.put("update_date", update_date);
+        long result = DB.insert("Feeds" , null, contentValues);
+        if (result == -1)
+        {
+            return false;
+
+        }
+        else{
+            return true;
+
+        }
 
     }
     public Boolean insertuserdata(String name, String contact, String dob){

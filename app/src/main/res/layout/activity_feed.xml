@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".feed">
+
+    <TextView
+        android:id="@+id/feedtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Feed Details"
+        android:textSize="24dp" />
+
+    <EditText
+        android:id="@+id/feedname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feedtitle"
+        android:hint="food item"
+        android:inputType="textPersonName"
+        android:textSize="24dp" />
+    <EditText
+        android:id="@+id/served_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/feedname"
+        android:hint="served_by"
+        android:inputType="textPersonName"
+        android:textSize="24dp"
+
+        />
+    <EditText
+        android:id="@+id/updated_by"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/served_by"
+        android:hint="updated_by"
+        android:inputType="textPersonName"
+        android:textSize="24dp"
+
+        />
+    <EditText
+        android:id="@+id/created_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/updated_by"
+        android:hint="created_date"
+        android:inputType="datetime"
+        android:textSize="24dp"
+
+        />
+    <EditText
+        android:id="@+id/update_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/created_date"
+        android:hint="update_date"
+        android:inputType="datetime"
+        android:textSize="24dp"
+
+        />
+    <Button
+        android:id="@+id/insert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="ADD DATA"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/update_date"
+        />
+
+
+</RelativeLayout>
