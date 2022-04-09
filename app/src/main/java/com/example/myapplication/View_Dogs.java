@@ -46,7 +46,7 @@ public class View_Dogs extends AppCompatActivity {
 
                 }
                 else{
-                    Toast.makeText(View_Dogs.this, "NEw Entry Not Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(View_Dogs.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
                 }
             }
         });

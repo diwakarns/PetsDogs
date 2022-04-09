@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".Dogs_view"
+            android:exported="false" />
+        <activity
             android:name=".feed"
             android:exported="false" />
         <activity

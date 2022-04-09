@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, feed.class);
+                Intent intent = new Intent(MainActivity.this, Dogs_view.class);
                 startActivity(intent);
                 finish();
             }

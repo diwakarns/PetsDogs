@@ -46,7 +46,7 @@ public class feed extends AppCompatActivity {
 
                 }
                 else{
-                    Toast.makeText(feed.this, "NEw Entry Not Inserted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(feed.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
                 }
             }
         });
