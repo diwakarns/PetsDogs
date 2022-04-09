@@ -31,25 +31,6 @@ public class feed extends AppCompatActivity {
 
          DB = new DBHelper(this);
 
-        insert1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String nameTXT= fooditem.getText().toString();
-                String contactTXT = served_by.getText().toString();
-                String dobTXT = updated_by.getText().toString();
-                String created_date1 = created_date.getText().toString();
-                String update_date1 = update_date.getText().toString();
-                Boolean checkinsertdata = DB.insertfeeddata(nameTXT, contactTXT, dobTXT,created_date1, update_date1);
-                if(checkinsertdata == true)
-                {
-                    Toast.makeText(feed.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();
-
-                }
-                else{
-                    Toast.makeText(feed.this, "New Entry Not Inserted", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
 
     }
 }

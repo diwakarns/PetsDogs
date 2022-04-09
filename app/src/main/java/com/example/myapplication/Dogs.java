@@ -2,6 +2,7 @@ package com.example.myapplication;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.DatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -10,40 +11,14 @@ import android.util.Log;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class Dogs extends SQLiteOpenHelper {
-    /*// below variable is for our database name.
-    private static final String dbName = "Pets";
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
-    // below int is our database version
-    private static final int dbVersion = 1;
-
-    // below variable is for table name.
-    private static final String tableName = "Dogs";
-
-    // below variable is for dogs Id.
-    private static final String dogsId = "dogsId";
-
-    // below variable is for dogs name.
-    private static final String dogsName = "dogsName";
-
-    // below variable is for our dogs color.
-    private static final String dogsColor = "dogsColor";
-
-    // below variable is for Warning
-    private static final String precautions = "precautions";
-
-    //below variable is for creation date automatic by system
-  *//*  private static final String created_date = "Created_Date";
-
-    //below variable is for update date automatic by system
-    private static final String update_date = "update_date";
-*/
+public class Dogs<Public> extends SQLiteOpenHelper {
 
     public Dogs(@Nullable Context context) {
         super(context, "Pets.db", null, 1);
     }
-
-
 
 
     @Override
@@ -51,7 +26,7 @@ public class Dogs extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("create Table Dogs(dogsId INTEGER primary key Autoincrement, " +
                 "dogsName TEXT, " +
                 "dogsColor TEXT," +
-                "precautions TEXT  )");
+                "precautions TEXT)");
 
 
         //To execute above sql query
@@ -66,6 +41,8 @@ public class Dogs extends SQLiteOpenHelper {
     }
 
 
+
+
     public Boolean insertdogsdata(String dogsName, String dogsColor, String precautions  ) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
@@ -73,8 +50,10 @@ public class Dogs extends SQLiteOpenHelper {
         contentValues.put("dogsColor", dogsColor);
         contentValues.put("precautions", precautions);
 
+
+
         long result = sqLiteDatabase.insert("Dogs", null, contentValues);
-       /* Log.d("Name", "insertdogsdata: " + "");*/
+
 
         if (result == -1)
         {
@@ -87,5 +66,59 @@ public class Dogs extends SQLiteOpenHelper {
         }
 
 
+    }
+
+    public Cursor getdogdata(){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Dogs", null);
+        return cursor;
+
+    }
+
+    public Boolean deletedogdata(String dogsName){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Dogs where dogsName = ?", new String[]{dogsName});
+        if(cursor.getCount()>0){
+            long result = sqLiteDatabase.delete("Dogs",  "dogsName=?", new String[]{dogsName});
+            if (result == -1)
+            {
+                return false;
+
+            }
+            else{
+                return true;
+
+            }
+        }else
+        {
+            return false;
+
+        }
+    }
+
+    public Boolean updatedogdata( String dogsName, String dogsColor, String precautions){
+        SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
+        contentValues.put("dogsName", dogsName);
+        contentValues.put("dogsColor", dogsColor);
+        contentValues.put("precautions", precautions);
+        Cursor cursor = sqLiteDatabase.rawQuery("select * from Dogs where dogsName = ?", new String[]{dogsName});
+
+        if(cursor.getCount()>0){
+            long result = sqLiteDatabase.update("Dogs",  contentValues, "dogsName=?", new String[]{dogsName});
+            if (result == -1)
+            {
+                return false;
+
+            }
+            else{
+                return true;
+
+            }
+        }else
+        {
+            return false;
+
+        }
     }
 }

@@ -28,25 +28,7 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists Feeds");
 
     }
-    public Boolean insertfeeddata(String nameTXT, String served_by, String updated_by, String created_date, String update_date){
-        SQLiteDatabase DB = this.getWritableDatabase();
-        ContentValues contentValues = new ContentValues();
-        contentValues.put("served_by", served_by);
-        contentValues.put("updated_by", updated_by);
-        contentValues.put("created_date", created_date);
-        contentValues.put("update_date", update_date);
-        long result = DB.insert("Feeds" , null, contentValues);
-        if (result == -1)
-        {
-            return false;
 
-        }
-        else{
-            return true;
-
-        }
-
-    }
     public Boolean insertuserdata(String name, String contact, String dob){
         SQLiteDatabase DB = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();

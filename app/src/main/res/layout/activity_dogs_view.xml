@@ -52,7 +52,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/dogsColor"
         android:hint="created_date"
-        android:inputType="datetime"
+        android:inputType="textPersonName"
         android:textSize="24dp"
 
         />
@@ -63,7 +63,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/created_date"
         android:hint="update_date"
-        android:inputType="datetime"
+        android:inputType="textPersonName"
         android:textSize="24dp"
 
         />-->
@@ -76,5 +76,34 @@
         android:layout_marginTop="30dp"
         android:layout_below="@id/dogsColor"
         />
+    <Button
+        android:id="@+id/viewdogdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text=" VIEW DOG DATA"
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/insert1"
+        />
+    <Button
+        android:id="@+id/deletedogdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text=" Delete Dog Data "
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/viewdogdata"
+        />
+    <Button
+        android:id="@+id/updatedogdata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text=" Update Dog Data "
+        android:layout_marginTop="30dp"
+        android:layout_below="@id/deletedogdata"
+        />
+
+
 
 </RelativeLayout>
