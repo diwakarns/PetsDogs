@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:text="Insert New Record"
+        android:text="Insert Society Data"
         android:layout_marginTop="30dp"
 
         />
@@ -21,9 +21,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="24dp"
-        android:text="View Dogs Records"
+        android:text="Insert Dogs Data"
         android:layout_marginTop="30dp"
         android:layout_below="@+id/insert"
+        />
+    <Button
+        android:id="@+id/feeddogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="24dp"
+        android:text="Feed Dogs Data"
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/view"
         />
 
 

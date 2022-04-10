@@ -15,7 +15,7 @@ public class DBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase DB) {
-        DB.execSQL("create Table UserDetails(name TEXT primary key, contact TEXT, dob TEXT)");
+        DB.execSQL("create Table UserDetails(societyid INTEGER Primary Key Autoincrement, name TEXT , contact TEXT, dob TEXT)");
         DB.execSQL("create Table Feeds(feedsID TEXT primary key AutoIncrement, served_by TEXT," +
                 "updated_by TEXT, created_date DATETIME,update_date DATETIME)");
 

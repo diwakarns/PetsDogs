@@ -20,7 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/texttitle"
-        android:hint="Name"
+        android:hint="Society Name"
         android:inputType="textPersonName"
         android:textSize="24dp" />
 
@@ -29,18 +29,18 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/name"
-        android:hint="Color"
+        android:hint="Wing Name"
         android:inputType="textPersonName"
         android:textSize="24dp" />
+
     <EditText
         android:id="@+id/dob"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Precaution"
-        android:textSize="24dp"
         android:layout_below="@id/contact"
+        android:hint="Descrption"
         android:inputType="textPersonName"
-        />
+        android:textSize="24dp" />
 
     <Button
         android:id="@+id/btnInsert"

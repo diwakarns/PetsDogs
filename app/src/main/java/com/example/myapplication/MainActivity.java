@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button insert;
     private Button view;
+    private Button feeddogs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setTitle("Pet Dogs");
         insert = findViewById(R.id.insert);
         view = findViewById(R.id.view);
-
+        feeddogs = findViewById(R.id.feeddogs);
 
         insert.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -33,6 +34,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, Dogs_view.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+        feeddogs.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, Dogs_view.class);

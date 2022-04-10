@@ -99,13 +99,14 @@ public class View_Dogs extends AppCompatActivity {
                 StringBuffer buffer = new StringBuffer();
                 while (res.moveToNext())
                 {
-                    buffer.append("Name : " +res.getString(0)+ "\n" );
-                    buffer.append("Contact : " +res.getString(1)+ "\n" );
-                    buffer.append("DOB : " +res.getString(2)+ "\n\n" );
+                    buffer.append("Society ID : " +res.getString(0)+ "\n" );
+                    buffer.append("Society Name : " +res.getString(1)+ "\n" );
+                    buffer.append("Wing Name : " +res.getString(2)+ "\n" );
+                    buffer.append("Descrption : " +res.getString(3)+ "\n\n" );
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(View_Dogs.this);
                 builder.setCancelable(true);
-                builder.setTitle("USEr Entry ");
+                builder.setTitle("User Entry ");
                 builder.setMessage(buffer.toString());
                 builder.show();
             }
