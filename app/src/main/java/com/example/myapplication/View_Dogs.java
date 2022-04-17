@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class View_Dogs extends AppCompatActivity {
 
-    EditText name, contact, dob;
+    EditText name, contact, dob, created_date;
     Button insert, update, delete, view;
     DBHelper DB;
 
@@ -25,7 +25,7 @@ public class View_Dogs extends AppCompatActivity {
         name = findViewById(R.id.name);
         contact = findViewById(R.id.contact);
         dob = findViewById(R.id.dob);
-
+        created_date= findViewById(R.id.created_date);
         insert= findViewById(R.id.btnInsert);
         delete = findViewById(R.id.btnDelete);
         update = findViewById(R.id.btnUpdate);
@@ -38,8 +38,8 @@ public class View_Dogs extends AppCompatActivity {
                 String nameTXT= name.getText().toString();
                 String contactTXT = contact.getText().toString();
                 String dobTXT = dob.getText().toString();
-
-                Boolean checkinsertdata = DB.insertuserdata(nameTXT, contactTXT, dobTXT);
+                String created_date1 = created_date.getText().toString();
+                Boolean checkinsertdata = DB.insertuserdata(nameTXT, contactTXT, dobTXT, created_date1);
                 if(checkinsertdata == true)
                 {
                     Toast.makeText(View_Dogs.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();

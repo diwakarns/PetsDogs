@@ -41,7 +41,14 @@
         android:hint="Descrption"
         android:inputType="textPersonName"
         android:textSize="24dp" />
-
+    <EditText
+        android:id="@+id/created_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/dob"
+        android:hint="Created Date"
+        android:inputType="datetime"
+        android:textSize="24dp" />
     <Button
         android:id="@+id/btnInsert"
         android:layout_width="match_parent"
@@ -49,7 +56,7 @@
         android:textSize="24dp"
         android:text="Insert New Data"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/dob"
+        android:layout_below="@id/created_date"
         />
     <Button
         android:id="@+id/btnDelete"
@@ -58,7 +65,7 @@
         android:textSize="24dp"
         android:text="Delete"
 
-        android:layout_below="@id/btnView"
+        android:layout_below="@id/btnInsert"
         />
     <Button
         android:id="@+id/btnUpdate"
@@ -67,7 +74,7 @@
         android:textSize="24dp"
         android:text="Update"
 
-        android:layout_below="@id/btnInsert"
+        android:layout_below="@id/btnDelete"
         />
     <Button
         android:id="@+id/btnView"

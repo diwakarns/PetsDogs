@@ -36,8 +36,7 @@ public class Dogs<Public> extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-
-
+        Log.d("Name", "Hello ");
         sqLiteDatabase.execSQL("ALTER TABLE Dogs ADD COLUMN created_date DATETIME");
         sqLiteDatabase.execSQL("Drop Table if exists Dogs");
         onCreate(sqLiteDatabase);
@@ -55,7 +54,7 @@ public class Dogs<Public> extends SQLiteOpenHelper {
         contentValues.put("precautions", precautions);
         contentValues.put("created_date", created_date);
 
-
+        Log.d("Name2", "Word ");
         long result = sqLiteDatabase.insert("Dogs", null, contentValues);
 
 
