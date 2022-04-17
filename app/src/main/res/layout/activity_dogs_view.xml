@@ -46,27 +46,27 @@
 
         />
 
-  <!--  <EditText
+    <EditText
         android:id="@+id/created_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/dogsColor"
         android:hint="created_date"
-        android:inputType="textPersonName"
+        android:inputType="datetime"
         android:textSize="24dp"
 
         />
+    <!--
+        <EditText
+            android:id="@+id/update_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/created_date"
+            android:hint="update_date"
+            android:inputType="textPersonName"
+            android:textSize="24dp"
 
-    <EditText
-        android:id="@+id/update_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/created_date"
-        android:hint="update_date"
-        android:inputType="textPersonName"
-        android:textSize="24dp"
-
-        />-->
+            />-->
     <Button
         android:id="@+id/insert1"
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
         android:textSize="24dp"
         android:text="ADD DATA"
         android:layout_marginTop="30dp"
-        android:layout_below="@id/dogsColor"
+        android:layout_below="@id/created_date"
         />
     <Button
         android:id="@+id/viewdogdata"

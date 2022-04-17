@@ -34,8 +34,8 @@ public class Dogs_view extends AppCompatActivity {
         deletedogdata = findViewById(R.id.deletedogdata);
         updatedogdata = findViewById(R.id.updatedogdata);
 
-        /*created_date = findViewById(R.id.created_date);
-        update_date = findViewById(R.id.update_date);*/
+        created_date = findViewById(R.id.created_date);
+        /* update_date = findViewById(R.id.update_date);*/
         DB = new Dogs(this);
         insert1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,8 +43,8 @@ public class Dogs_view extends AppCompatActivity {
                 String nameTXT= dogsName.getText().toString();
                 String contactTXT = precautions.getText().toString();
                 String dobTXT = dogsColor.getText().toString();
-
-                Boolean checkinsertdata = DB.insertdogsdata(nameTXT, contactTXT, dobTXT );
+                String created_date1 = created_date.getText().toString();
+                Boolean checkinsertdata = DB.insertdogsdata(nameTXT, contactTXT, dobTXT,created_date1 );
                 if(checkinsertdata == true)
                 {
                     Toast.makeText(Dogs_view.this, "New Entry Inserted", Toast.LENGTH_SHORT).show();

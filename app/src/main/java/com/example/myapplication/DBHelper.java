@@ -26,6 +26,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase DB, int i, int i1) {
         DB.execSQL("drop Table if exists UserDetails");
         DB.execSQL("drop Table if exists Feeds");
+        onCreate(DB);
 
     }
 

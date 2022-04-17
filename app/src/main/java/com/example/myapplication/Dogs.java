@@ -36,20 +36,24 @@ public class Dogs<Public> extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
-        sqLiteDatabase.execSQL("drop Table if exists Dogs");
+
+
+        sqLiteDatabase.execSQL("ALTER TABLE Dogs ADD COLUMN created_date DATETIME");
+        sqLiteDatabase.execSQL("Drop Table if exists Dogs");
+        onCreate(sqLiteDatabase);
 
     }
 
 
 
 
-    public Boolean insertdogsdata(String dogsName, String dogsColor, String precautions  ) {
+    public Boolean insertdogsdata(String dogsName, String dogsColor, String precautions, String created_date  ) {
         SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
         contentValues.put("dogsName", dogsName);
         contentValues.put("dogsColor", dogsColor);
         contentValues.put("precautions", precautions);
-
+        contentValues.put("created_date", created_date);
 
 
         long result = sqLiteDatabase.insert("Dogs", null, contentValues);
