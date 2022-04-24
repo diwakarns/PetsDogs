@@ -9,29 +9,6 @@ import androidx.annotation.Nullable;
 public class Society extends SQLiteOpenHelper {
 
 
-    // below variable is for our database name.
-    private static final String dbName = "pets";
-
-    // below int is our database version
-    private static final int dbVersion = 1;
-
-    // below variable is for our table name.
-    private static final String tableName = "Society";
-
-    // below variable is for our id column.
-    private static final String socId = "society_id";
-
-    // below variable is for our society name.
-    private static final String socName = "society_name";
-
-    // below variable is for our Wing.
-    private static final String wingName = "wing_name";
-
-    //below variable is for creation date automatic by system
-    private static final String created_date = "Created_Date";
-
-    //below variable is for update date automatic by system
-    private static final String update_date = "update_date";
 
     public Society(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {
         super(context, name, factory, version);
@@ -41,15 +18,7 @@ public class Society extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
 
 
-        String query = "CREATE TABLE " + tableName + " ("
-                + socId + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-                + socName + " TEXT,"
-                + created_date + "DATETIME,"
-                + update_date + "DATETIME,"
-                + wingName + " TEXT)";
 
-      //To execute above sql query
-        sqLiteDatabase.execSQL(query);
 
     }
 

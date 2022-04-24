@@ -23,10 +23,14 @@ public class Dogs<Public> extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("create Table Dogs(dogsId INTEGER primary key Autoincrement, " +
-                "dogsName TEXT, " +
-                "dogsColor TEXT," +
-                "precautions TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE Dogs(dogsID INTEGER PRIMARY KEY AUTOINCREMENT," +
+                "dogsName TEXT," +
+                "dogsColor TEXT, " +
+                "precautions TEXT," +
+                " createdDate DATETIME," +
+                "updatedDate DATETIME, " +
+                "createdBy TEXT, " +
+                "updatedBy TEXT )");
 
 
         //To execute above sql query
@@ -54,7 +58,7 @@ public class Dogs<Public> extends SQLiteOpenHelper {
         contentValues.put("dogsColor", dogsColor);
         contentValues.put("precautions", precautions);
         contentValues.put("created_date", created_date);
-       
+
         Log.d("Name2", "Word ");
         long result = sqLiteDatabase.insert("Dogs", null, contentValues);
 
