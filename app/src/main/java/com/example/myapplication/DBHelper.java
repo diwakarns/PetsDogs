@@ -17,9 +17,11 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase DB) {
         DB.execSQL("create Table UserDetails(societyid INTEGER Primary Key Autoincrement, name TEXT , contact TEXT, dob TEXT )");
+        Log.d("Name", "Hello ");
         DB.execSQL("create Table Feeds(feedsID TEXT primary key AutoIncrement, served_by TEXT," +
                 "updated_by TEXT, created_date DATETIME,update_date DATETIME)");
 
+        DB.execSQL("ALTER TABLE UserDetails ADD COLUMN created_date DATETIME");
 
     }
 
@@ -28,8 +30,8 @@ public class DBHelper extends SQLiteOpenHelper {
         DB.execSQL("drop Table if exists UserDetails");
         DB.execSQL("drop Table if exists Feeds");
         onCreate(DB);
-        DB.execSQL("ALTER TABLE UserDetails ADD COLUMN created_date DATETIME");
-        Log.d("Name", "Hello ");
+
+
 
     }
 
@@ -40,7 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
         contentValues.put("contact", contact);
         contentValues.put("dob", dob);
         contentValues.put("created_date", created_date);
-        Log.d("Name2", "Word ");
+
 
         long result = DB.insert("UserDetails" , null, contentValues);
         if (result == -1)

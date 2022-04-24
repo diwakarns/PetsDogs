@@ -41,6 +41,7 @@ public class Dogs<Public> extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL("Drop Table if exists Dogs");
         onCreate(sqLiteDatabase);
 
+
     }
 
 
@@ -53,7 +54,7 @@ public class Dogs<Public> extends SQLiteOpenHelper {
         contentValues.put("dogsColor", dogsColor);
         contentValues.put("precautions", precautions);
         contentValues.put("created_date", created_date);
-
+       
         Log.d("Name2", "Word ");
         long result = sqLiteDatabase.insert("Dogs", null, contentValues);
 
