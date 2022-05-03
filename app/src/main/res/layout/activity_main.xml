@@ -4,36 +4,57 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="20dp"
+    android:padding="30dp"
+    android:background="@drawable/petdogs"
+    android:textAlignment="center"
     tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Pet Dogs"
+        android:textColor="@color/white"
+        android:textAlignment="center"
+        android:layout_marginTop="70dp"
+        android:textSize="50dp"
+        />
 
     <Button
         android:id="@+id/insert"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
+        android:layout_marginTop="200dp"
         android:text="Insert Society Data"
-        android:layout_marginTop="30dp"
+        android:textSize="24dp"
+        android:layout_below="@+id/text"
 
         />
+
     <Button
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Insert Dogs Data"
-        android:layout_marginTop="30dp"
         android:layout_below="@+id/insert"
-        />
+        android:text="Insert Dogs Data"
+        android:textSize="24dp" />
+
     <Button
         android:id="@+id/feeddogs"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24dp"
-        android:text="Feed Dogs Data"
-        android:layout_marginTop="30dp"
         android:layout_below="@+id/view"
-        />
+        android:text="Feed Dogs Data"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/viewdogs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/feeddogs"
+        android:text="View Dogs Data"
+        android:textSize="24dp" />
 
 
 </RelativeLayout>
