@@ -4,12 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="30px"
-    tools:context=".Dog"
+    tools:context=".society"
     android:background="@drawable/petdogs"
     >
-
-
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -20,63 +17,40 @@
         android:text="Support Society Dogs "
         android:textAlignment="center"
         android:textSize="30dp" />
-
     <EditText
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/title"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="150dp"
         android:background="@color/material_dynamic_primary100"
-        android:hint="Dog Name"
+        android:hint="Wing Name"
         android:inputType="textPersonName"
         android:padding="30px"
         android:textAlignment="center"
-        android:textColor="@color/white" />
+        android:textColor="@color/white"
 
-    <EditText
-        android:id="@+id/dogcolor"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/editTextTextEmailAddress"
-        android:layout_marginTop="5dp"
-        android:background="@color/material_dynamic_primary100"
-        android:hint="Dog Color"
-        android:inputType="textPersonName"
-        android:padding="30px"
-        android:textAlignment="center" />
+        />
 
-    <EditText
-        android:id="@+id/precaution"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/dogcolor"
-        android:layout_marginTop="5dp"
-        android:background="@color/material_dynamic_primary100"
-        android:hint="Precaution"
-        android:inputType="textPersonName"
-        android:padding="30px"
-        android:textAlignment="center" />
     <EditText
         android:id="@+id/createdby"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/precaution"
-        android:layout_marginTop="5dp"
+        android:layout_below="@+id/editTextTextEmailAddress"
+        android:layout_marginTop="37dp"
         android:background="@color/material_dynamic_primary100"
-        android:hint="Created By"
+        android:hint="Created BY"
         android:inputType="textPersonName"
         android:padding="30px"
         android:textAlignment="center" />
+
+
     <Button
         android:id="@+id/Submitsociety"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/createdby"
-        android:layout_marginTop="67dp"
+        android:layout_marginTop="72dp"
         android:background="@color/green"
         android:text="Register"
         android:textSize="24dp" />
-
-
 </RelativeLayout>
